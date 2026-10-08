@@ -1,6 +1,13 @@
+import os
+
 from dataprocessor import process_documents
 from retriever import Retriever
 from generator import generate_answer
+
+
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+DATA_FOLDER = os.path.join(BASE_DIR, "data")
+VECTOR_FOLDER = os.path.join(BASE_DIR, "vector_store")
 
 
 def build_vector_store():

@@ -6,7 +6,8 @@ import numpy as np
 from embedder import Embedder
 
 
-VECTOR_FOLDER = "vector_store"
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+VECTOR_FOLDER = os.path.join(BASE_DIR, "vector_store")
 
 INDEX_FILE = os.path.join(
     VECTOR_FOLDER,

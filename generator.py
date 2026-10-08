@@ -12,24 +12,24 @@ API_KEY = os.getenv(
 )
 
 
-if not API_KEY:
+model = None
 
-    raise ValueError(
-        "GEMINI_API_KEY is missing from .env"
+if API_KEY:
+    genai.configure(
+        api_key=API_KEY
+    )
+
+    model = genai.GenerativeModel(
+        "gemini-flash-latest"
     )
 
 
-genai.configure(
-    api_key=API_KEY
-)
-
-
-model = genai.GenerativeModel(
-    "gemini-flash-latest"
-)
-
-
 def generate_answer(question, context):
+
+    if model is None:
+        raise ValueError(
+            "GEMINI_API_KEY is missing from .env"
+        )
 
     prompt = f"""
 You are an HR Assistant.
