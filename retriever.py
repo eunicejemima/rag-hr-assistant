@@ -1,4 +1,4 @@
-import os
+﻿import os
 import pickle
 import faiss
 import numpy as np
@@ -117,7 +117,7 @@ class Retriever:
 
         for index in indices[0]:
 
-            if index < len(self.chunks):
+            if 0 <= index < len(self.chunks):
 
                 results.append(
                     self.chunks[index]

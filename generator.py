@@ -1,4 +1,4 @@
-import os
+﻿import os
 
 from dotenv import load_dotenv
 import google.generativeai as genai
@@ -25,7 +25,7 @@ genai.configure(
 
 
 model = genai.GenerativeModel(
-    "gemini-1.5-flash"
+    "gemini-flash-latest"
 )
 
 

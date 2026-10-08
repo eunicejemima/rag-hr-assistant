@@ -1,4 +1,6 @@
+faiss-cpu
+sentence-transformers
+numpy
 pypdf
-openai
-pinecone
-dotenv
+python-dotenv
+google-generativeai
