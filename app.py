@@ -1,4 +1,12 @@
+import os
+
 import streamlit as st
+
+try:
+    if "GEMINI_API_KEY" in st.secrets:
+        os.environ["GEMINI_API_KEY"] = st.secrets["GEMINI_API_KEY"]
+except Exception:
+    pass
 
 from dataprocessor import process_documents
 from generator import API_KEY, generate_answer
